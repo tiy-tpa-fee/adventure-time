@@ -1,9 +1,12 @@
-.app {
-  background-color: red;
+.root {
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 100%;
+
+  aside {
+    padding: 1em;
+  }
 
   section {
     display: flex;
