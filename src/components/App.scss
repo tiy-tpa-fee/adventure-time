@@ -1,0 +1,15 @@
+.app {
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100%;
+
+  section {
+    display: flex;
+  }
+
+  main {
+    flex: 1;
+  }
+}
