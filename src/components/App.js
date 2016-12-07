@@ -5,6 +5,19 @@ import styles from './App.scss'
 
 class App extends Component {
 
+  constructor () {
+    super()
+    this.state = {
+      currentCharacter: 4
+    }
+  }
+
+  setCurrentCharacter = (character) => {
+    this.setState({
+      currentCharacter: character
+    })
+  }
+
   render () {
     return <div className={styles.root}>
       <header>
@@ -12,9 +25,11 @@ class App extends Component {
       </header>
       <section>
         <aside>
-          <CharacterList />
+          <CharacterList currentCharacter={this.state.currentCharacter}
+            setCurrentCharacter={this.setCurrentCharacter} />
         </aside>
-        <CharacterDetails />
+        <CharacterDetails
+          currentCharacter={this.state.currentCharacter} />
       </section>
     </div>
   }

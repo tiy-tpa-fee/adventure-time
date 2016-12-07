@@ -5,26 +5,17 @@ import characters from '../characters.json'
 
 class CharacterList extends Component {
 
-  constructor () {
-    super()
-    this.state = {
-      currentCharacter: 4
-    }
+  static propTypes = {
+    currentCharacter: React.PropTypes.number,
+    setCurrentCharacter: React.PropTypes.func
   }
-
-  setCurrentCharacter (character) {
-    this.setState({
-      currentCharacter: character
-    })
-  }
-
   render () {
     const items = characters.map((character, i) => {
-      const active = i === this.state.currentCharacter
+      const active = i === this.props.currentCharacter
       return <CharacterListItem
         name={character.name}
         isActive={active}
-        onSelectCharacter={() => this.setCurrentCharacter(i)}
+        onSelectCharacter={() => this.props.setCurrentCharacter(i)}
         key={i} />
     })
     return <ul className={styles.root}>
