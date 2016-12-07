@@ -3,11 +3,13 @@ import styles from './CharacterListItem.scss'
 
 class CharacterListItem extends Component {
   static propTypes = {
-    name: React.PropTypes.string.isRequired
+    name: React.PropTypes.string.isRequired,
+    isActive: React.PropTypes.bool
   }
 
   render () {
-    return <li className={styles.root}>
+    const active = this.props.isActive ? styles.active : null
+    return <li className={`${styles.root} ${active}`}>
       {this.props.name}
     </li>
   }
