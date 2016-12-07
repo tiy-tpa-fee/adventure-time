@@ -1,8 +1,12 @@
 import React, { Component } from 'react'
-import styles from './CharacterDetails.scss'
 import characters from '../characters.json'
+import styles from './CharacterDetails.scss'
 
 class CharacterDetails extends Component {
+
+  static propTypes = {
+    currentCharacter: React.PropTypes.number
+  }
 
   render () {
     const character = characters[this.props.currentCharacter]

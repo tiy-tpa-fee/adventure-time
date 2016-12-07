@@ -3,16 +3,21 @@ import CharacterList from './CharacterList'
 import CharacterDetails from './CharacterDetails'
 import styles from './App.scss'
 
+// define a component called App
 class App extends Component {
 
+  // called when this component is created
   constructor () {
+    // calls the constructor of the super class "Component"
     super()
+    // sets an initial state
     this.state = {
-      currentCharacter: 4
+      currentCharacter: 0
     }
   }
 
   setCurrentCharacter = (character) => {
+    // mutate the state with the new current character
     this.setState({
       currentCharacter: character
     })
@@ -25,7 +30,8 @@ class App extends Component {
       </header>
       <section>
         <aside>
-          <CharacterList currentCharacter={this.state.currentCharacter}
+          <CharacterList
+            currentCharacter={this.state.currentCharacter}
             setCurrentCharacter={this.setCurrentCharacter} />
         </aside>
         <CharacterDetails

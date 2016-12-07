@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import CharacterListItem from './CharacterListItem'
-import styles from './CharacterList.scss'
 import characters from '../characters.json'
+import styles from './CharacterList.scss'
 
 class CharacterList extends Component {
 
@@ -9,6 +9,7 @@ class CharacterList extends Component {
     currentCharacter: React.PropTypes.number,
     setCurrentCharacter: React.PropTypes.func
   }
+
   render () {
     const items = characters.map((character, i) => {
       const active = i === this.props.currentCharacter
